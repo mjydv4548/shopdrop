@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/cartFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_bag"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/wishListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_wishlist"
+        tools:ignore="MenuTitle" />
+
+
+    <item
+        android:id="@+id/profileFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        tools:ignore="MenuTitle" />
+
+</menu>

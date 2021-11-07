@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".presentation.user_wishlist.SizeSelectionFragment">
+
+    <TextView
+        android:id="@+id/textSize"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/size_selector_recycleView"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSize" />
+
+    <TextView
+        android:id="@+id/size_price"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
+        app:layout_constraintEnd_toEndOf="@+id/size_selector_recycleView"
+        app:layout_constraintStart_toStartOf="@+id/size_selector_recycleView"
+        app:layout_constraintTop_toBottomOf="@+id/size_selector_recycleView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_size_done"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/wishlist_btn_background"
+        android:text="Done"
+        app:layout_constraintEnd_toEndOf="@+id/size_price"
+        app:layout_constraintStart_toStartOf="@+id/size_price"
+        app:layout_constraintTop_toBottomOf="@+id/size_price" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

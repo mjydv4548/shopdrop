@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ShopDrop</string>
+
+    <!-- Login and SignUp Activity String Resources -->
+
+    <string name="loginQuote">Log in to your existing\naccount.</string>
+    <string name="SignUpQuote">Don\'t have an account?<font color='#efaf33'> Sign Up</font></string>
+    <string name="email">E-MAIL</string>
+    <string name="password">PASSWORD</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="signUpQuote">Please sign in to your existing account \nAlready have an account? <font color='#efaf33'> Login</font></string>
+    <string name="name">NAME</string>
+    <string name="name_hint">Joe</string>
+    <string name="email_hint">abc@gmail.com</string>
+    <string name="pass_hint">******</string>
+
+
+    <!--  Home And Product Activity String Resources  -->
+
+    <string name="search_hint">What are you looking for ?</string>
+    <string name="scroll_view_content">Scroll View</string>
+    <string name="product_image_content">Product Image</string>
+    <string name="text_size">Size : </string>
+
+
+    <string name="comment1">Iten was to good bcz we made it as a dress code so cloth and fitting was awsome we will do shopping only on myntra thanks for giving such a good and worth able prodect</string>
+    <string name="comment2">Good product. Delivery was before time. Thank you Myntra !!! Just one thing, pls do send the msg on the previous day of delivery. Happy to have this product thanks again</string>
+    <string name="comment3">Excellent product.. color is exact same as shown in picture..Loved it... my height is 5.10 and bought M size  Go for it ..</string>
+    <string name="comment4">Thank you so much Myntra the product was delivered on time I am very happy and the quality was best and dusty kind of product which i received . I hope that next time </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
