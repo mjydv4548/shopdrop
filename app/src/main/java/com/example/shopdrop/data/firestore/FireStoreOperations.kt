@@ -3,6 +3,7 @@ package com.example.shopdrop.data.firestore
 import android.net.Uri
 import com.example.shopdrop.common.Constants
 import com.example.shopdrop.common.Resource
+import com.example.shopdrop.data.model.UserAddressDto
 import com.example.shopdrop.data.model.UserDto
 import com.example.shopdrop.domain.model.Cart
 import com.example.shopdrop.domain.model.filterList
@@ -98,7 +99,6 @@ class FireStoreOperations @Inject constructor(
         }
     }
 
-
     suspend fun updateProfile(
         userId: String,
         name: String?,
@@ -133,6 +133,40 @@ class FireStoreOperations @Inject constructor(
 
             }
             return Resource.Success(true)
+        } catch (e: Exception) {
+            return Resource.Error(e.message.toString())
+        }
+    }
+
+
+    suspend fun updateAddress(
+        action: String,
+        userId: String,
+        index: Int,
+        address: UserAddressDto
+    ): Resource<Boolean> {
+        try {
+            val userDto = fireStore.collection("users").document(userId).get().await()
+            val userAddress =
+                userDto.toObject(UserDto::class.java)!!.userAddress as MutableList<UserAddressDto>
+            val map = mutableMapOf<String, Any>()
+
+            if (action == Constants.UPDATE) {
+                if (index == -1) {
+                    userAddress.add(address)
+                } else {
+                    userAddress[index] = address
+                }
+            } else if (action == Constants.REMOVE) {
+                userAddress.removeAt(index)
+            }
+
+            map["userAddress"] = userAddress
+
+            fireStore.collection("users").document(userId).set(map, SetOptions.merge()).await()
+
+            return Resource.Success(true)
+
         } catch (e: Exception) {
             return Resource.Error(e.message.toString())
         }

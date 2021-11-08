@@ -11,6 +11,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,7 +22,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
-            android:text="Sahed Howard"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="Main Bus Stand Guriani"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_item_address_name" />
@@ -44,7 +43,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="Guriani"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_item_street_address" />
 
@@ -53,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Rewari"
+            android:fontFamily="@font/roboto_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_item_locality" />
@@ -63,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Haryana"
+            android:fontFamily="@font/roboto_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_item_address_city" />
@@ -85,7 +83,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="123301"
             app:layout_constraintBottom_toBottomOf="@+id/txt_item_locality"
             app:layout_constraintStart_toEndOf="@+id/textView12"
             app:layout_constraintTop_toTopOf="@+id/txt_item_locality" />
@@ -94,9 +91,9 @@
             android:id="@+id/textView14"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
             android:text="Mobile : "
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_item_address_state" />
 
@@ -106,33 +103,65 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="8664649868"
             app:layout_constraintBottom_toBottomOf="@+id/textView14"
             app:layout_constraintStart_toEndOf="@+id/textView14"
             app:layout_constraintTop_toTopOf="@+id/textView14"
             app:layout_constraintVertical_bias="1.0" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_remove_address"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:background="@drawable/wishlist_btn_background"
-            android:text="Remove"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_item_phone"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/btn_edit_address"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/wishlist_btn_background"
-            android:text="Edit"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_remove_address"
-            app:layout_constraintEnd_toStartOf="@+id/btn_remove_address"
-            app:layout_constraintTop_toTopOf="@+id/btn_remove_address" />
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="EDIT"
+            android:textColor="@color/secondaryColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/btn_remove_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="REMOVE"
+            android:textColor="@color/secondaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/btn_edit_address" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            android:background="#C0C0C0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:background="#C0C0C0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/line1"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

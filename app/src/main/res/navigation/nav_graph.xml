@@ -145,6 +145,25 @@
         android:id="@+id/addressFragment"
         android:name="com.example.shopdrop.presentation.update_address.AddressFragment"
         android:label="fragment_address"
-        tools:layout="@layout/fragment_address" />
+        tools:layout="@layout/fragment_address" >
+        <action
+            android:id="@+id/action_addressFragment_to_editAddressFragment"
+            app:destination="@id/editAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editAddressFragment"
+        android:name="com.example.shopdrop.presentation.update_address.EditAddressFragment"
+        android:label="fragment_edit_address"
+        tools:layout="@layout/fragment_edit_address" >
+        <argument
+            android:name="addressDetails"
+            app:argType="com.example.shopdrop.data.model.UserAddressDto"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="index"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
 
 </navigation>

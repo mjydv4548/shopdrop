@@ -17,5 +17,7 @@ object Constants {
 
     const val PROFILE_PICTURE: String = "profile_image.jpg"
 
+    const val UPDATE: String = "UPDATE"
+
 
 }

@@ -10,6 +10,7 @@ import com.example.shopdrop.domain.user_case.get_product.GetProductUseCase
 import com.example.shopdrop.domain.user_case.get_products.GetProductsUseCase
 import com.example.shopdrop.domain.user_case.get_user.GetUserUseCase
 import com.example.shopdrop.domain.user_case.get_users.GetUsersUseCase
+import com.example.shopdrop.domain.user_case.update_address.UpdateAddressUseCase
 import com.example.shopdrop.domain.user_case.update_profile.UpdateProfileUseCase
 import com.example.shopdrop.domain.user_case.update_user_cart.UpdateUserCartUseCase
 import com.example.shopdrop.domain.user_case.update_user_wishlist.UpdateUserWishlistUseCase
@@ -173,6 +174,12 @@ object AppModule {
     @Singleton
     fun provideUpdateProfileUseCase(userRepository: UserRepository): UpdateProfileUseCase {
         return UpdateProfileUseCase(userRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideUpdateAddressUseCase(userRepository: UserRepository): UpdateAddressUseCase {
+        return UpdateAddressUseCase(userRepository)
     }
 
 }

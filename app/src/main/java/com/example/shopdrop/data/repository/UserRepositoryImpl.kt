@@ -3,6 +3,7 @@ package com.example.shopdrop.data.repository
 import android.net.Uri
 import com.example.shopdrop.common.Resource
 import com.example.shopdrop.data.firestore.FireStoreOperations
+import com.example.shopdrop.data.model.UserAddressDto
 import com.example.shopdrop.data.model.UserDto
 import com.example.shopdrop.domain.repository.UserRepository
 import com.google.firebase.firestore.FirebaseFirestore
@@ -51,6 +52,15 @@ class UserRepositoryImpl @Inject constructor(
         uri: Uri?
     ): Resource<Boolean> {
         return fireStoreOperations.updateProfile(userId, name, email, phone, uri)
+    }
+
+    override suspend fun updateAddress(
+        action: String,
+        userId: String,
+        index: Int,
+        address: UserAddressDto
+    ): Resource<Boolean> {
+        return fireStoreOperations.updateAddress(action, userId, index, address)
     }
 
 }

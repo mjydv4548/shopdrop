@@ -28,6 +28,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.productDetailsFragment -> hideBottomNav()
                 R.id.editProfileFragment -> hideBottomNav()
                 R.id.addressFragment -> hideBottomNav()
+                R.id.editAddressFragment -> hideBottomNav()
                 else -> showBottomNav()
             }
         }

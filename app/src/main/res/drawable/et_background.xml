@@ -9,6 +9,6 @@
         android:left="16dp"
         android:right="8dp"
         android:top="8dp" />
-    <size android:height="50dp" />
+    <size android:height="48dp" />
 
 </shape>

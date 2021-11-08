@@ -2,6 +2,7 @@ package com.example.shopdrop.domain.repository
 
 import android.net.Uri
 import com.example.shopdrop.common.Resource
+import com.example.shopdrop.data.model.UserAddressDto
 import com.example.shopdrop.data.model.UserDto
 import kotlinx.coroutines.flow.Flow
 
@@ -17,5 +18,13 @@ interface UserRepository {
         email: String?,
         phone: Long?,
         uri: Uri?
+    ): Resource<Boolean>
+
+
+    suspend fun updateAddress(
+        action: String,
+        userId: String,
+        index: Int,
+        address: UserAddressDto
     ): Resource<Boolean>
 }
