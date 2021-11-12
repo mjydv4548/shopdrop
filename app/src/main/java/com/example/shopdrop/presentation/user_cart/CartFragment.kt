@@ -21,8 +21,8 @@ import com.example.shopdrop.presentation.user_cart.view_model.CartViewModel
 import com.google.firebase.storage.StorageReference
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_cart.*
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -51,19 +51,14 @@ class CartFragment : Fragment(R.layout.fragment_cart), CartAdapter.ChangeQuantit
                     navController.navigate(startDestination, null, navOptions)
                 }
             })
+
+
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        if (cartList.size == 0) {
-            hide_cart.isVisible = false
-            empty_cart.isVisible = true
-        } else {
-            hide_cart.isVisible = true
-            empty_cart.isVisible = false
-        }
+        hide_cart.isVisible = false
 
         val user = userViewModel.getCurrentUser()
         if (user != null) {
@@ -89,9 +84,9 @@ class CartFragment : Fragment(R.layout.fragment_cart), CartAdapter.ChangeQuantit
                         }
                         val shippingCost = list.size * 20
                         val total = subTotal + shippingCost
-                        txt_subtotal.text = "$$subTotal"
-                        txt_shippingCost.text = "$$shippingCost"
-                        txt_total.text = "$$total"
+                        txt_subtotal.text = "₹ $subTotal"
+                        txt_shippingCost.text = "₹ $shippingCost"
+                        txt_total.text = "₹ $total"
                         cartAdapter.notifyDataSetChanged()
 
                         cart_progress.isVisible = false
@@ -102,8 +97,6 @@ class CartFragment : Fragment(R.layout.fragment_cart), CartAdapter.ChangeQuantit
                             hide_cart.isVisible = true
                             empty_cart.isVisible = false
                         }
-
-
                     }
                     is Resource.Error -> {
                         cart_progress.isVisible = false
@@ -119,8 +112,29 @@ class CartFragment : Fragment(R.layout.fragment_cart), CartAdapter.ChangeQuantit
             findNavController().navigate(action)
         }
 
+        btn_proceed_to_checkout.setOnClickListener {
+            val amount = txt_total.text.toString().substring(2).toInt() * 100
+            cartViewModel.userProfile.observe(viewLifecycleOwner, Observer {
+                when (it) {
+                    is Resource.Success -> {
+                        val profile = it.data!!
+                        val cartArray: Array<CartItem> = cartList.toTypedArray()
+                        val action =
+                            CartFragmentDirections.actionCartFragmentToSelectAddressFragment(
+                                amount,
+                                profile,
+                                cartArray
+                            )
+                        findNavController().navigate(action)
+                    }
+                    else -> Unit
+                }
+            })
+
+        }
 
     }
+
 
     override fun changeQuantity(
         action: String,
@@ -129,23 +143,42 @@ class CartFragment : Fragment(R.layout.fragment_cart), CartAdapter.ChangeQuantit
         selectedSize: String
     ) {
         val userId = userViewModel.getCurrentUser()!!.uid
-        if (action == Constants.INCREASE) {
-            lifecycleScope.launch {
-                lifecycleScope.async {
-                    cartViewModel.updateCart(userId, productId, selectedSize, Constants.INCREASE)
-                }.await()
-                cartViewModel.getCart(userId)
+        when (action) {
+            Constants.INCREASE -> {
+                lifecycleScope.launch {
+                    withContext(lifecycleScope.coroutineContext) {
+                        cartViewModel.updateCart(
+                            userId,
+                            productId,
+                            selectedSize,
+                            Constants.INCREASE
+                        )
+                    }
+                    cartViewModel.getCart(userId)
+                }
+
             }
-
-        } else {
-            lifecycleScope.launch {
-                lifecycleScope.async {
-                    cartViewModel.updateCart(userId, productId, selectedSize, Constants.DECREASE)
-                }.await()
-                cartViewModel.getCart(userId)
+            Constants.DECREASE -> {
+                lifecycleScope.launch {
+                    withContext(lifecycleScope.coroutineContext) {
+                        cartViewModel.updateCart(
+                            userId,
+                            productId,
+                            selectedSize,
+                            Constants.DECREASE
+                        )
+                    }
+                    cartViewModel.getCart(userId)
+                }
             }
-
-
+            else -> {
+                lifecycleScope.launch {
+                    withContext(lifecycleScope.coroutineContext) {
+                        cartViewModel.updateCart(userId, productId, selectedSize, Constants.REMOVE)
+                    }
+                    cartViewModel.getCart(userId)
+                }
+            }
         }
     }
 

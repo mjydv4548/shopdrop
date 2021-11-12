@@ -31,7 +31,7 @@ class WishListAdapter(
         val item = wishlistList[position]
         GlideApp.with(context).load(reference.child("${item.images}/image1.jpg")).into(holder.image)
         holder.description.text = item.description
-        holder.price.text = "$${item.price}"
+        holder.price.text = "₹ ${item.price}"
         holder.moveToCart.setOnClickListener {
             listener.onClick(position, item.price,item.productId)
         }

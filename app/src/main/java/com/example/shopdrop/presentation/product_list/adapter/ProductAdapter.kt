@@ -29,7 +29,7 @@ class ProductAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.description.text = productList[position].description
-        holder.price.text = "$${productList[position].price}"
+        holder.price.text = "₹ ${productList[position].price}"
         holder.brand.text = productList[position].brand
         GlideApp.with(context)
             .load(reference.child("${productList[position].images}/image1.jpg"))

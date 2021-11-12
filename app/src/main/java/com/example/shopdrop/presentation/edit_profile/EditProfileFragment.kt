@@ -57,11 +57,16 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         GlideApp.with(requireActivity())
             .load(reference.child("${args.userProfileImage}/${PROFILE_PICTURE}"))
             .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .skipMemoryCache(true)
             .into(edit_profile_image)
 
         editProfile_etName.setText(args.userName)
         editProfile_etEmail.setText(args.userEmail)
-        editProfile_etPhone.setText(args.userPhone.toString())
+        val size = args.userPhone.toString().length
+        if (size == 10) {
+            editProfile_etPhone.setText(args.userPhone.toString())
+        }
+
 
 
 
@@ -74,25 +79,33 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
 
         btn_update_profile.setOnClickListener {
             lifecycleScope.launch {
-                val userId = userViewModel.getCurrentUser()!!.uid
-                val edit = updateProfileViewModel.updateProfile(
-                    userId, editProfile_etName.text.toString(),
-                    editProfile_etEmail.text.toString(),
-                    editProfile_etPhone.text.toString().toLong(),
-                    curFile
-                )
-                when (edit) {
-                    is Resource.Success -> {
-                        Toast.makeText(requireContext(), "Updated", Toast.LENGTH_LONG).show()
-                        findNavController().popBackStack()
+
+                if (editProfile_etPhone.text.toString().length == 10) {
+                    val userId = userViewModel.getCurrentUser()!!.uid
+                    val edit = updateProfileViewModel.updateProfile(
+                        userId, editProfile_etName.text.toString(),
+                        editProfile_etEmail.text.toString(),
+                        editProfile_etPhone.text.toString().toLong(),
+                        curFile
+                    )
+                    when (edit) {
+                        is Resource.Success -> {
+                            Toast.makeText(requireContext(), "Updated", Toast.LENGTH_LONG).show()
+                            findNavController().popBackStack()
+                        }
+                        is Resource.Error -> {
+                            Toast.makeText(requireContext(), edit.errorMessage, Toast.LENGTH_LONG)
+                                .show()
+                            findNavController().popBackStack()
+                        }
+                        else -> Unit
                     }
-                    is Resource.Error -> {
-                        Toast.makeText(requireContext(), edit.errorMessage, Toast.LENGTH_LONG)
-                            .show()
-                        findNavController().popBackStack()
-                    }
-                    else -> Unit
+                } else {
+                    Toast.makeText(requireContext(), "phone is not valid", Toast.LENGTH_LONG)
+                        .show()
                 }
+
+
             }
 
         }

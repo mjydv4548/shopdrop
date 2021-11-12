@@ -14,8 +14,9 @@
     <color name="colorGrey">#9e9f97</color>
     <color name="colorProductSize">#f4ebe9</color>
     <color name="colorBlue">#1ea5e4</color>
-    <color name="colorOrange">#fb6453</color>
+    <color name="colorOrange">#d94a2a</color>
     <color name="colorEditTextBgColor">#f2f5fa</color>
     <color name="colorEditTextBorderColor">#E9EBEF</color>
     <color name="colorDarkBlue">#18206F</color>
+    <color name="colorYellowFade">#fff2da</color>
 </resources>

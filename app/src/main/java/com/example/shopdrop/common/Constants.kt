@@ -19,5 +19,7 @@ object Constants {
 
     const val UPDATE: String = "UPDATE"
 
+    const val INDEX: String = "INDEX"
+
 
 }

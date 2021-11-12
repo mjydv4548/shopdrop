@@ -102,8 +102,6 @@ class WishListFragment : Fragment(R.layout.fragment_wishlist),
 
         val navController = findNavController()
 
-        empty_wishlist.isVisible = wishlist.size == 0
-
         val user = userViewModel.getCurrentUser()
         if (user != null) {
             wishlistAdapter = WishListAdapter(

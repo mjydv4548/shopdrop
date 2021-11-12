@@ -1,4 +1,4 @@
-package com.example.shopdrop.presentation.update_address
+package com.example.shopdrop.presentation.user_address
 
 import android.os.Bundle
 import android.view.View
@@ -15,8 +15,8 @@ import com.example.shopdrop.R
 import com.example.shopdrop.common.Constants
 import com.example.shopdrop.common.Resource
 import com.example.shopdrop.data.model.UserAddressDto
-import com.example.shopdrop.presentation.update_address.adapter.AddressAdapter
-import com.example.shopdrop.presentation.update_address.viewModel.AddressViewModel
+import com.example.shopdrop.presentation.user_address.adapter.AddressAdapter
+import com.example.shopdrop.presentation.user_address.viewModel.AddressViewModel
 import com.example.shopdrop.presentation.user_auth.view_model.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_address.*
@@ -36,7 +36,6 @@ class AddressFragment : Fragment(R.layout.fragment_address), AddressAdapter.Edit
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btn_confirm_address.isVisible = args.addressSelection
 
         addressAdapter = AddressAdapter(requireActivity(), this, addressList, this, this)
         address_recycleView.layoutManager = LinearLayoutManager(context)
@@ -58,6 +57,11 @@ class AddressFragment : Fragment(R.layout.fragment_address), AddressAdapter.Edit
                     address_progress.isVisible = false
                     addressList.clear()
                     addressList.addAll(it.data!!)
+                    if (it.data.isNotEmpty()) {
+                        btn_confirm_address.isVisible = args.addressSelection
+                    } else {
+                        btn_confirm_address.isVisible = false
+                    }
                     empty_address.isVisible = it.data.isEmpty()
                     addressAdapter.notifyDataSetChanged()
                 }

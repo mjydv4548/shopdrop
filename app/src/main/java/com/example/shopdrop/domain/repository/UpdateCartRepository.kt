@@ -9,4 +9,7 @@ interface UpdateCartRepository {
         selectedSize: String,
         action: String
     ): Resource<Boolean>
+
+
+    suspend fun emptyCart(userId: String): Resource<Boolean>
 }

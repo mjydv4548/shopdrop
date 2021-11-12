@@ -31,7 +31,7 @@ class CartAdapter(
         GlideApp.with(context).load(reference.child("${item.image}/image1.jpg")).into(holder.image)
         holder.description.text = item.description
         holder.quantity.text = item.quantity.toString()
-        holder.price.text = "$${item.price}"
+        holder.price.text = "₹ ${item.price}"
         holder.productSize.text = item.selectedSize
 
         holder.increaseQuantity.setOnClickListener {

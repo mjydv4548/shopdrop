@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    tools:context=".presentation.user_order.OrderTrackingFragment">
+
+    <TextView
+        android:id="@+id/textOrderTracking"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:paddingStart="8dp"
+        android:text="Track Order" />
+
+    <TextView
+        android:id="@+id/txt_tracking_orderId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_medium"
+        android:paddingStart="16dp"
+        android:text="Order Id # "
+        android:textColor="@color/colorBlack" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
+        android:paddingBottom="24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_order_placed"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/order_tracking_success"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_order_placed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_order_placed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_order_placed"
+                app:layout_constraintTop_toTopOf="@+id/iv_order_placed">
+
+                <ImageView
+                    android:id="@+id/imagePlaced"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_placed"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textOrderPlaced"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Order Placed"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintStart_toEndOf="@+id/imagePlaced"
+                    app:layout_constraintTop_toTopOf="@+id/imagePlaced" />
+
+                <TextView
+                    android:id="@+id/textOrderPlacedDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="We have received your order"
+                    app:layout_constraintBottom_toBottomOf="@+id/imagePlaced"
+                    app:layout_constraintStart_toEndOf="@+id/imagePlaced" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_order_confirmed"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="72dp"
+                android:src="@drawable/order_tracking_progress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_order_placed" />
+
+            <View
+                android:id="@+id/line_order_confirmed"
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorDarkBlue"
+                app:layout_constraintBottom_toTopOf="@+id/iv_order_confirmed"
+                app:layout_constraintEnd_toEndOf="@+id/iv_order_confirmed"
+                app:layout_constraintStart_toStartOf="@+id/iv_order_confirmed"
+                app:layout_constraintTop_toBottomOf="@+id/iv_order_placed" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_order_confirmed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_order_confirmed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_order_confirmed"
+                app:layout_constraintTop_toTopOf="@+id/iv_order_confirmed">
+
+                <ImageView
+                    android:id="@+id/imageConfirmed"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_confirmed"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textOrderConfirmed"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Order Confirmed"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintStart_toEndOf="@+id/imageConfirmed"
+                    app:layout_constraintTop_toTopOf="@+id/imageConfirmed" />
+
+                <TextView
+                    android:id="@+id/textOrderConfirmedDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Your order has been confirmed"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageConfirmed"
+                    app:layout_constraintStart_toEndOf="@+id/imageConfirmed" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_order_shipped"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="72dp"
+                android:src="@drawable/order_tracking_progress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_order_confirmed" />
+
+            <View
+                android:id="@+id/line_order_shipped"
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorDarkBlue"
+                app:layout_constraintBottom_toTopOf="@+id/iv_order_shipped"
+                app:layout_constraintEnd_toEndOf="@+id/iv_order_shipped"
+                app:layout_constraintStart_toStartOf="@+id/iv_order_shipped"
+                app:layout_constraintTop_toBottomOf="@+id/iv_order_confirmed" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_order_shipped"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_order_shipped"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_order_shipped"
+                app:layout_constraintTop_toTopOf="@+id/iv_order_shipped">
+
+                <ImageView
+                    android:id="@+id/imageShipped"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_shipped"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textOrderShipped"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Order Shipped"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintStart_toEndOf="@+id/imageShipped"
+                    app:layout_constraintTop_toTopOf="@+id/imageShipped" />
+
+                <TextView
+                    android:id="@+id/textOrderShippedDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Your order has been shipped"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageShipped"
+                    app:layout_constraintStart_toEndOf="@+id/imageShipped" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_order_progress"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="72dp"
+                android:src="@drawable/order_tracking_progress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_order_shipped" />
+
+            <View
+                android:id="@+id/line_order_progress"
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorDarkBlue"
+                app:layout_constraintBottom_toTopOf="@+id/iv_order_progress"
+                app:layout_constraintEnd_toEndOf="@+id/iv_order_progress"
+                app:layout_constraintStart_toStartOf="@+id/iv_order_progress"
+                app:layout_constraintTop_toBottomOf="@+id/iv_order_shipped" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_order_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_order_progress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_order_progress"
+                app:layout_constraintTop_toTopOf="@+id/iv_order_progress">
+
+                <ImageView
+                    android:id="@+id/imageProgress"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_progress"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textOrderProgress"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="In Progress"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintStart_toEndOf="@+id/imageProgress"
+                    app:layout_constraintTop_toTopOf="@+id/imageProgress" />
+
+                <TextView
+                    android:id="@+id/textOrderProgressDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Your order is on the way"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageProgress"
+                    app:layout_constraintStart_toEndOf="@+id/imageProgress" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_order_delivered"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="72dp"
+                android:src="@drawable/order_tracking_progress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_order_progress" />
+
+            <View
+
+                android:id="@+id/line_order_delivered"
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorDarkBlue"
+                app:layout_constraintBottom_toTopOf="@+id/iv_order_delivered"
+                app:layout_constraintEnd_toEndOf="@+id/iv_order_delivered"
+                app:layout_constraintStart_toStartOf="@+id/iv_order_delivered"
+                app:layout_constraintTop_toBottomOf="@+id/iv_order_progress" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_order_delivered"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_order_delivered"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_order_delivered"
+                app:layout_constraintTop_toTopOf="@+id/iv_order_delivered">
+
+                <ImageView
+                    android:id="@+id/imageDelivered"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_delivered"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textOrderDelivered"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Order Delivered"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintStart_toEndOf="@+id/imageDelivered"
+                    app:layout_constraintTop_toTopOf="@+id/imageDelivered" />
+
+                <TextView
+                    android:id="@+id/textOrderDeliveredDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Your order has been delivered"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageDelivered"
+                    app:layout_constraintStart_toEndOf="@+id/imageDelivered" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

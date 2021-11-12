@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <gradient
+        android:angle="@integer/material_motion_duration_long_1"
+        android:endColor="@color/colorYellowFade"
+        android:startColor="@color/secondaryLightColor"
+        android:type="linear" />
+    <corners android:radius="24dp" />
+    <size android:height="48dp" />
+</shape>

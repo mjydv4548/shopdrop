@@ -48,7 +48,10 @@
         android:layout_height="32dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/wishlist_btn_background"
+        android:fontFamily="@font/roboto_medium"
         android:text="Done"
+        android:textAllCaps="false"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/size_price"
         app:layout_constraintStart_toStartOf="@+id/size_price"
         app:layout_constraintTop_toBottomOf="@+id/size_price" />

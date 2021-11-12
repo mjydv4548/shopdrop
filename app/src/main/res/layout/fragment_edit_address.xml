@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.update_address.EditAddressFragment">
+    tools:context=".presentation.user_address.EditAddressFragment">
 
     <TextView
         android:id="@+id/txt_edit_address"
@@ -227,7 +227,10 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/et_background"
-        android:text="cancel"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent" />
@@ -240,7 +243,10 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/btn_background"
-        android:text="save"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline" />

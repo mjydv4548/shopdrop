@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable-v24/et_small_background.xml" value="0.2574074074074074" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/btn_background.xml" value="0.2657407407407407" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/btn_fade_bg.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/card_view_border.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/card_view_border_selected.xml" value="0.26615384615384613" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/details_state.xml" value="0.26615384615384613" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/empty_cart1.xml" value="0.25092592592592594" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/empty_wishlist.xml" value="0.25092592592592594" />
@@ -13,36 +16,61 @@
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/heart_bg.xml" value="0.23981481481481481" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_back.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_back1.xml" value="0.24814814814814815" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_cancelled1.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_deliverd.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_delivered.xml" value="0.22467532467532467" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_heart.xml" value="0.23981481481481481" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_heart_selected.xml" value="0.23981481481481481" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_heart_selected_small.xml" value="0.26615384615384613" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_heart_small.xml" value="0.26615384615384613" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_right.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/ic_shipped.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/order_tracking_cancelled.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/order_tracking_progress.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/order_tracking_success.xml" value="0.22467532467532467" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/size_fade_bg.xml" value="0.26615384615384613" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/size_present_bg.xml" value="0.25555555555555554" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/size_selected_bg.xml" value="0.25555555555555554" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/txt_add_or_change_bg.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/txt_background.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/txt_order_cancelled_bg.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/txt_order_completed_bg.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/txt_order_ongoing_bg.xml" value="0.22467532467532467" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/txt_order_state_bg.xml" value="0.22467532467532467" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/wishlist_btn_background.xml" value="0.25555555555555554" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/wishlist_state.xml" value="0.25092592592592594" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/drawable/wishlist_state_small.xml" value="0.26615384615384613" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout-land/fragment_edit_profile.xml" value="0.2671875" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout-land/fragment_order_failed.xml" value="0.2890625" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout-land/fragment_order_successful.xml" value="0.2890625" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout-land/fragment_profile.xml" value="0.2671875" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout-land/fragment_select_address.xml" value="0.264" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/activity_home.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/activity_payment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/activity_product.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/activity_sign_up.xml" value="0.20606884057971014" />
-        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_address.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_address.xml" value="0.264" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_cart.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_edit_address.xml" value="0.264" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_edit_profile.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_home.xml" value="0.2151268115942029" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_login.xml" value="0.22146739130434784" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_order_details.xml" value="0.2" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_order_failed.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_order_successful.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_orders.xml" value="0.2" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_product.xml" value="0.2418478260869565" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_profile.xml" value="0.23369565217391305" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_select_address.xml" value="0.2" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_sign_up.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_size_selection.xml" value="0.264" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_track_order.xml" value="0.2" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/fragment_wishlist.xml" value="0.21014492753623187" />
-        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/item_address.xml" value="0.264" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/item_address.xml" value="0.2" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/item_cart.xml" value="0.21014492753623187" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/item_cart_list.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/item_order.xml" value="0.264" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/item_product.xml" value="0.2151268115942029" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/item_review.xml" value="0.21014492753623187" />
         <entry key="..\:/Users/Manjeet Yadav/AndroidStudioProjects/Kotlin/ShopDrop/app/src/main/res/layout/item_size.xml" value="0.23369565217391305" />

@@ -355,8 +355,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:background="@drawable/btn_background"
+        android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="Add to Cart"
+        android:textAllCaps="false"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ll" />

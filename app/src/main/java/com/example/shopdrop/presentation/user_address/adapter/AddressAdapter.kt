@@ -1,4 +1,4 @@
-package com.example.shopdrop.presentation.update_address.adapter
+package com.example.shopdrop.presentation.user_address.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

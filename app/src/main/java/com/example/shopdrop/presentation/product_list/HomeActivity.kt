@@ -29,6 +29,12 @@ class HomeActivity : AppCompatActivity() {
                 R.id.editProfileFragment -> hideBottomNav()
                 R.id.addressFragment -> hideBottomNav()
                 R.id.editAddressFragment -> hideBottomNav()
+                R.id.orderSuccessfulFragment -> hideBottomNav()
+                R.id.orderFailedFragment -> hideBottomNav()
+                R.id.selectAddressFragment -> hideBottomNav()
+                R.id.ordersFragment -> hideBottomNav()
+                R.id.orderTrackingFragment -> hideBottomNav()
+                R.id.orderDetailsFragment -> hideBottomNav()
                 else -> showBottomNav()
             }
         }
@@ -44,5 +50,6 @@ class HomeActivity : AppCompatActivity() {
         bottom_navigation.visibility = View.VISIBLE
 
     }
+
 
 }

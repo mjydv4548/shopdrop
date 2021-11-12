@@ -79,7 +79,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product), SizeAdapter.
         size_recycle_view.adapter = sizeAdapter
 
         product_description.text = args.productDescription
-        product_price.text = "$${args.productPrice}"
+        product_price.text = "₹ ${args.productPrice}"
 
         btn_product_detail.setOnCheckedChangeListener { _, isChecked ->
             product_details.isVisible = isChecked

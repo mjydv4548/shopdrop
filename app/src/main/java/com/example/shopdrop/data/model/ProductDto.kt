@@ -49,7 +49,8 @@ fun ProductDto.toCartItem(selectedSize: String, quantity: Int): CartItem {
         price = productPrice,
         selectedSize = selectedSize,
         quantity = quantity,
-        productId = productId
+        productId = productId,
+        productBrand = productBrand
     )
 }
 

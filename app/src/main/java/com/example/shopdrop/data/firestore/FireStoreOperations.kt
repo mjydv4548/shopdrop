@@ -5,6 +5,7 @@ import com.example.shopdrop.common.Constants
 import com.example.shopdrop.common.Resource
 import com.example.shopdrop.data.model.UserAddressDto
 import com.example.shopdrop.data.model.UserDto
+import com.example.shopdrop.data.model.UserOrderDto
 import com.example.shopdrop.domain.model.Cart
 import com.example.shopdrop.domain.model.filterList
 import com.google.firebase.auth.FirebaseAuth
@@ -153,15 +154,78 @@ class FireStoreOperations @Inject constructor(
 
             if (action == Constants.UPDATE) {
                 if (index == -1) {
-                    userAddress.add(address)
+                    if (userAddress.size == 0) {
+                        address.defaultAddress = true
+                        userAddress.add(address)
+                    } else {
+                        if (address.defaultAddress) {
+                            for (add in userAddress) {
+                                add.defaultAddress = false
+                            }
+                            userAddress.add(address)
+                        } else {
+                            userAddress.add(address)
+                        }
+                    }
                 } else {
-                    userAddress[index] = address
+                    if (address.defaultAddress) {
+                        for (add in userAddress) {
+                            add.defaultAddress = false
+                        }
+                        userAddress[index] = address
+                    } else {
+                        userAddress[index] = address
+                    }
+
                 }
             } else if (action == Constants.REMOVE) {
-                userAddress.removeAt(index)
+                val removedAddress = userAddress[index]
+                if (removedAddress.defaultAddress) {
+                    if (userAddress.size == 1) {
+                        userAddress.removeAt(index)
+                    } else {
+                        userAddress[0].defaultAddress = true
+                        userAddress.removeAt(index)
+                    }
+                } else {
+                    userAddress.removeAt(index)
+                }
             }
 
             map["userAddress"] = userAddress
+
+            fireStore.collection("users").document(userId).set(map, SetOptions.merge()).await()
+
+            return Resource.Success(true)
+
+        } catch (e: Exception) {
+            return Resource.Error(e.message.toString())
+        }
+    }
+
+    suspend fun emptyCart(userId: String): Resource<Boolean> {
+        return try {
+            val map = mutableMapOf<String, Any>()
+            val cartList = mutableListOf<Cart>()
+            map["userCart"] = cartList
+            fireStore.collection("users").document(userId).set(map, SetOptions.merge()).await()
+            Resource.Success(true)
+        } catch (e: Exception) {
+            Resource.Error(e.message.toString())
+        }
+    }
+
+
+    suspend fun addOrder(userId: String, orderDto: List<UserOrderDto>): Resource<Boolean> {
+        try {
+            val userDto = fireStore.collection("users").document(userId).get().await()
+            val userOrders = userDto.toObject(UserDto::class.java)!!.userOrders
+            val map = mutableMapOf<String, Any>()
+            if (userDto.exists()) {
+                userOrders.addAll(orderDto)
+            }
+
+            map["userOrders"] = userOrders
 
             fireStore.collection("users").document(userId).set(map, SetOptions.merge()).await()
 

@@ -31,6 +31,10 @@
         <action
             android:id="@+id/action_cartFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action_cartFragment_to_selectAddressFragment"
+            app:destination="@id/selectAddressFragment" />
     </fragment>
 
     <fragment
@@ -72,7 +76,7 @@
         android:id="@+id/profileFragment"
         android:name="com.example.shopdrop.presentation.user_profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -82,12 +86,15 @@
         <action
             android:id="@+id/action_profileFragment_to_addressFragment"
             app:destination="@id/addressFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
     </fragment>
     <dialog
         android:id="@+id/sizeSelectionFragment"
         android:name="com.example.shopdrop.presentation.user_wishlist.SizeSelectionFragment"
         android:label="fragment_size_selection"
-        tools:layout="@layout/fragment_size_selection" >
+        tools:layout="@layout/fragment_size_selection">
         <argument
             android:name="productSizeList"
             app:argType="string[]" />
@@ -127,7 +134,7 @@
         android:id="@+id/editProfileFragment"
         android:name="com.example.shopdrop.presentation.edit_profile.EditProfileFragment"
         android:label="fragment_edit_profile"
-        tools:layout="@layout/fragment_edit_profile" >
+        tools:layout="@layout/fragment_edit_profile">
         <argument
             android:name="userName"
             app:argType="string" />
@@ -143,27 +150,123 @@
     </fragment>
     <fragment
         android:id="@+id/addressFragment"
-        android:name="com.example.shopdrop.presentation.update_address.AddressFragment"
+        android:name="com.example.shopdrop.presentation.user_address.AddressFragment"
         android:label="fragment_address"
-        tools:layout="@layout/fragment_address" >
+        tools:layout="@layout/fragment_address">
         <action
             android:id="@+id/action_addressFragment_to_editAddressFragment"
             app:destination="@id/editAddressFragment" />
+        <argument
+            android:name="addressSelection"
+            android:defaultValue="false"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/editAddressFragment"
-        android:name="com.example.shopdrop.presentation.update_address.EditAddressFragment"
+        android:name="com.example.shopdrop.presentation.user_address.EditAddressFragment"
         android:label="fragment_edit_address"
-        tools:layout="@layout/fragment_edit_address" >
+        tools:layout="@layout/fragment_edit_address">
         <argument
             android:name="addressDetails"
+            android:defaultValue="@null"
             app:argType="com.example.shopdrop.data.model.UserAddressDto"
+            app:nullable="true" />
+        <argument
+            android:name="index"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/orderSuccessfulFragment"
+        android:name="com.example.shopdrop.presentation.user_order.OrderSuccessfulFragment"
+        android:label="fragment_order_successful"
+        tools:layout="@layout/fragment_order_successful">
+        <action
+            android:id="@+id/action_orderSuccessfulFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="orderDetails"
+            app:argType="com.example.shopdrop.presentation.user_cart.model.CartItem[]" />
+        <argument
+            android:name="deliveryAddress"
+            app:argType="com.example.shopdrop.data.model.UserAddressDto" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFailedFragment"
+        android:name="com.example.shopdrop.presentation.user_order.OrderFailedFragment"
+        android:label="fragment_order_failed"
+        tools:layout="@layout/fragment_order_failed" />
+    <fragment
+        android:id="@+id/selectAddressFragment"
+        android:name="com.example.shopdrop.presentation.user_address.SelectAddressFragment"
+        android:label="fragment_select_address"
+        tools:layout="@layout/fragment_select_address">
+        <action
+            android:id="@+id/action_selectAddressFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+
+        <argument
+            android:name="amount"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_selectAddressFragment_to_orderFailedFragment"
+            app:destination="@id/orderFailedFragment"
+            app:popUpTo="@id/cartFragment" />
+        <action
+            android:id="@+id/action_selectAddressFragment_to_orderSuccessfulFragment"
+            app:destination="@id/orderSuccessfulFragment"
+            app:popUpTo="@id/homeFragment" />
+        <argument
+            android:name="userProfile"
+            app:argType="com.example.shopdrop.data.model.UserProfileDto"
             app:nullable="true"
             android:defaultValue="@null" />
         <argument
-            android:name="index"
-            app:argType="integer"
-            android:defaultValue="-1" />
+            android:name="cartList"
+            app:argType="com.example.shopdrop.presentation.user_cart.model.CartItem[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.shopdrop.presentation.user_order.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/action_ordersFragment_to_orderTrackingFragment"
+            app:destination="@id/orderTrackingFragment" />
+        <action
+            android:id="@+id/action_ordersFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+        <action
+            android:id="@+id/action_ordersFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderTrackingFragment"
+        android:name="com.example.shopdrop.presentation.user_order.OrderTrackingFragment"
+        android:label="fragment_track_order"
+        tools:layout="@layout/fragment_track_order" >
+        <argument
+            android:name="orderDetails"
+            app:argType="com.example.shopdrop.data.model.UserOrderDto" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.example.shopdrop.presentation.user_order.OrderDetailsFragment"
+        android:label="fragment_order_details"
+        tools:layout="@layout/fragment_order_details" >
+        <argument
+            android:name="orderDetails"
+            app:argType="com.example.shopdrop.data.model.UserOrderDto" />
+        <action
+            android:id="@+id/action_orderDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
 
 </navigation>

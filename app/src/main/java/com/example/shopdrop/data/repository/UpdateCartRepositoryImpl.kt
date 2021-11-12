@@ -16,4 +16,10 @@ class UpdateCartRepositoryImpl @Inject constructor(private val fireStoreOperatio
     ): Resource<Boolean> {
         return fireStoreOperations.updateCart(userId, productId, selectedSize, action)
     }
+
+    override suspend fun emptyCart(userId: String): Resource<Boolean> {
+        return fireStoreOperations.emptyCart(userId)
+    }
+
+
 }

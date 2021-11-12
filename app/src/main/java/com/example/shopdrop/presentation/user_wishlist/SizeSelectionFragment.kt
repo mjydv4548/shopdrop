@@ -34,7 +34,7 @@ class SizeSelectionFragment : BottomSheetDialogFragment(), BottomSheetAdapter.Se
         super.onViewCreated(view, savedInstanceState)
         previousSavedStateHandle = findNavController().previousBackStackEntry!!.savedStateHandle
 
-        size_price.text = "$${args.productPrice}"
+        size_price.text = "₹ ${args.productPrice}"
         val sizeList: MutableList<String> = args.productSizeList.toMutableList()
 
         val size = Size(sizeList)

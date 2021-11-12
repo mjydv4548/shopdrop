@@ -6,11 +6,13 @@ import com.example.shopdrop.data.firestore.FireStoreOperations
 import com.example.shopdrop.data.repository.*
 import com.example.shopdrop.domain.repository.*
 import com.example.shopdrop.domain.user_case.auth_user.*
+import com.example.shopdrop.domain.user_case.empty_cart.EmptyCartUseCase
 import com.example.shopdrop.domain.user_case.get_product.GetProductUseCase
 import com.example.shopdrop.domain.user_case.get_products.GetProductsUseCase
 import com.example.shopdrop.domain.user_case.get_user.GetUserUseCase
 import com.example.shopdrop.domain.user_case.get_users.GetUsersUseCase
 import com.example.shopdrop.domain.user_case.update_address.UpdateAddressUseCase
+import com.example.shopdrop.domain.user_case.update_orders.UpdateOrderUseCase
 import com.example.shopdrop.domain.user_case.update_profile.UpdateProfileUseCase
 import com.example.shopdrop.domain.user_case.update_user_cart.UpdateUserCartUseCase
 import com.example.shopdrop.domain.user_case.update_user_wishlist.UpdateUserWishlistUseCase
@@ -180,6 +182,24 @@ object AppModule {
     @Singleton
     fun provideUpdateAddressUseCase(userRepository: UserRepository): UpdateAddressUseCase {
         return UpdateAddressUseCase(userRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideEmptyCartUseCase(updateCartRepository: UpdateCartRepository): EmptyCartUseCase {
+        return EmptyCartUseCase(updateCartRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideOrderRepository(fireStoreOperations: FireStoreOperations): OrderRepository {
+        return OrderRepositoryImpl(fireStoreOperations)
+    }
+
+    @Provides
+    @Singleton
+    fun provideUpdateOrderUseCase(orderRepository: OrderRepository): UpdateOrderUseCase {
+        return UpdateOrderUseCase(orderRepository)
     }
 
 }

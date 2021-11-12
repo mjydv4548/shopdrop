@@ -28,7 +28,11 @@
     <string name="comment2">Good product. Delivery was before time. Thank you Myntra !!! Just one thing, pls do send the msg on the previous day of delivery. Happy to have this product thanks again</string>
     <string name="comment3">Excellent product.. color is exact same as shown in picture..Loved it... my height is 5.10 and bought M size  Go for it ..</string>
     <string name="comment4">Thank you so much Myntra the product was delivered on time I am very happy and the quality was best and dusty kind of product which i received . I hope that next time </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="default_address">Default</string>
+    <string name="other_address">Others</string>
+    <string name="order_cancelled">Cancelled</string>
+    <string name="order_completed">Completed</string>
+    <string name="order_on_going">Progress</string>
 
 </resources>

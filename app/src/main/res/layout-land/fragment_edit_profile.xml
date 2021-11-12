@@ -54,8 +54,10 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/wishlist_btn_background"
-                android:text="choose image"
-                android:textSize="10sp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Choose Image"
+                android:textAllCaps="false"
+                android:textSize="12sp"
                 tools:ignore="SmallSp" />
 
             <TextView
@@ -130,7 +132,10 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/btn_background"
-                android:text="Update" />
+                android:fontFamily="@font/roboto_medium"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
 
         </LinearLayout>
 

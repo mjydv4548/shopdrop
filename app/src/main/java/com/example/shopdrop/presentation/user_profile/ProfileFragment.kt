@@ -74,6 +74,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                         GlideApp.with(requireActivity())
                             .load(reference.child("$profilePicture/${PROFILE_PICTURE}"))
                             .diskCacheStrategy(DiskCacheStrategy.NONE)
+                            .skipMemoryCache(true)
                             .into(profile_image)
 
                         profile_userName.text = userName
@@ -113,6 +114,12 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         btn_address.setOnClickListener {
             val action = ProfileFragmentDirections.actionProfileFragmentToAddressFragment()
+            findNavController().navigate(action)
+        }
+
+
+        btn_my_order.setOnClickListener {
+            val action = ProfileFragmentDirections.actionProfileFragmentToOrdersFragment()
             findNavController().navigate(action)
         }
     }

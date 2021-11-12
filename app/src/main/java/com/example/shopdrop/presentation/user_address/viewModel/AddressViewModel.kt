@@ -1,4 +1,4 @@
-package com.example.shopdrop.presentation.update_address.viewModel
+package com.example.shopdrop.presentation.user_address.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

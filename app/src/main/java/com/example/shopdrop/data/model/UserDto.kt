@@ -8,5 +8,6 @@ data class UserDto(
     val userCart: MutableList<Cart> = mutableListOf(),
     val userAddress: List<UserAddressDto> = mutableListOf(),
     val userProfile: UserProfileDto = UserProfileDto(),
+    val userOrders: MutableList<UserOrderDto> = mutableListOf(),
     val isAdmin: Boolean = false
 )

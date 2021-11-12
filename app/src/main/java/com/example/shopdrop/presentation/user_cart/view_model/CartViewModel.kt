@@ -5,7 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.shopdrop.common.Resource
+import com.example.shopdrop.data.model.UserProfileDto
 import com.example.shopdrop.data.model.toCartItem
+import com.example.shopdrop.domain.user_case.empty_cart.EmptyCartUseCase
 import com.example.shopdrop.domain.user_case.get_product.GetProductUseCase
 import com.example.shopdrop.domain.user_case.get_user.GetUserUseCase
 import com.example.shopdrop.domain.user_case.update_user_cart.UpdateUserCartUseCase
@@ -20,12 +22,25 @@ import javax.inject.Inject
 class CartViewModel @Inject constructor(
     private val getProductUseCase: GetProductUseCase,
     private val getUserUseCase: GetUserUseCase,
-    private val updateUserCartUseCase: UpdateUserCartUseCase
+    private val updateUserCartUseCase: UpdateUserCartUseCase,
+    private val emptyCartUseCase: EmptyCartUseCase
 ) : ViewModel() {
 
     private val _cart: MutableLiveData<Resource<List<CartItem>>> = MutableLiveData()
     val cart: LiveData<Resource<List<CartItem>>>
         get() = _cart
+
+    private val _userProfile: MutableLiveData<Resource<UserProfileDto>> = MutableLiveData()
+    val userProfile: LiveData<Resource<UserProfileDto>> get() = _userProfile
+
+
+    suspend fun emptyCart(userId: String): Resource<Boolean> {
+        var result: Resource<Boolean> = Resource.Error("An unknown error occurred")
+        viewModelScope.launch(Dispatchers.IO) {
+            result = emptyCartUseCase(userId)
+        }.join()
+        return result
+    }
 
     suspend fun updateCart(
         userId: String,
@@ -50,6 +65,8 @@ class CartViewModel @Inject constructor(
                     }
                     is Resource.Success -> {
                         val userCart = user.data!!.userCart
+                        val userProfile = user.data.userProfile
+                        _userProfile.postValue(Resource.Success(userProfile))
                         val finalList = mutableListOf<CartItem>()
                         for (cart in userCart) {
                             getProductUseCase(cart.productId).collect { product ->

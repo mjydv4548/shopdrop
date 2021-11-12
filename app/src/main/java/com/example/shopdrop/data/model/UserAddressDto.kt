@@ -7,10 +7,15 @@ import kotlinx.android.parcel.Parcelize
 data class UserAddressDto(
     val city: String = "",
     val state: String = "",
-    val defaultAddress: Boolean = false,
+    var defaultAddress: Boolean = false,
     val streetAddress: String = "",
     val zipCode: Int = 0,
     val locality: String = "",
     val phone: Long = 0,
     val name: String = ""
 ) : Parcelable
+
+fun UserAddressDto.filterDefault(): Boolean {
+    return defaultAddress
+}
+
