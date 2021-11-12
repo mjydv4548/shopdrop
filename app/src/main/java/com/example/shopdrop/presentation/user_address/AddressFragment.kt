@@ -6,10 +6,10 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shopdrop.R
 import com.example.shopdrop.common.Constants
@@ -24,17 +24,21 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class AddressFragment : Fragment(R.layout.fragment_address), AddressAdapter.EditClickHandler,
-    AddressAdapter.RemoveClickHandler {
+    AddressAdapter.RemoveClickHandler, AddressAdapter.SelectedAddress {
 
     private lateinit var addressAdapter: AddressAdapter
-    private val addressViewModel: AddressViewModel by viewModels()
+    private val addressViewModel: AddressViewModel by activityViewModels()
     private val userViewModel: UserViewModel by activityViewModels()
     private val addressList: MutableList<UserAddressDto> = mutableListOf()
+    private var selectedIndex: Int = 0
+    private val args: AddressFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        addressAdapter = AddressAdapter(requireActivity(), this, addressList, this)
+        btn_confirm_address.isVisible = args.addressSelection
+
+        addressAdapter = AddressAdapter(requireActivity(), this, addressList, this, this)
         address_recycleView.layoutManager = LinearLayoutManager(context)
         address_recycleView.adapter = addressAdapter
 
@@ -54,6 +58,7 @@ class AddressFragment : Fragment(R.layout.fragment_address), AddressAdapter.Edit
                     address_progress.isVisible = false
                     addressList.clear()
                     addressList.addAll(it.data!!)
+                    empty_address.isVisible = it.data.isEmpty()
                     addressAdapter.notifyDataSetChanged()
                 }
                 is Resource.Error -> {
@@ -62,7 +67,15 @@ class AddressFragment : Fragment(R.layout.fragment_address), AddressAdapter.Edit
                 }
             }
         })
+
+        btn_confirm_address.setOnClickListener {
+            val previousSavedStateHandle =
+                findNavController().previousBackStackEntry!!.savedStateHandle
+            previousSavedStateHandle.set(Constants.INDEX, selectedIndex.toString())
+            findNavController().popBackStack()
+        }
     }
+
 
     override fun edit(index: Int) {
         val userAddressDto = addressList[index]
@@ -95,6 +108,11 @@ class AddressFragment : Fragment(R.layout.fragment_address), AddressAdapter.Edit
                 else -> Unit
             }
         }
+
+    }
+
+    override fun selectedAddress(index: Int) {
+        selectedIndex = index
 
     }
 

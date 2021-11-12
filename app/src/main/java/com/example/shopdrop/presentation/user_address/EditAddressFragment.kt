@@ -5,7 +5,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -23,7 +22,7 @@ import kotlinx.coroutines.launch
 class EditAddressFragment : Fragment(R.layout.fragment_edit_address) {
 
     private val args: EditAddressFragmentArgs by navArgs()
-    private val addressViewModel: AddressViewModel by viewModels()
+    private val addressViewModel: AddressViewModel by activityViewModels()
     private val userViewModel: UserViewModel by activityViewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
