@@ -3,7 +3,7 @@
 
 
 
-
+<foreignObject width="100%" height="100%">
 <h1>A shopping application</h1>
 <div id="container">
 <img src ="https://firebasestorage.googleapis.com/v0/b/shopdrop-a8a7c.appspot.com/o/screenshot%2F1.jpg?alt=media&token=192be4f8-1287-4905-939c-fb56f2cf55de">
@@ -14,6 +14,9 @@
 </div>
 
 <style>
+  h1{
+  color:red;
+  }
   #container{
   display:flex;
   
@@ -23,3 +26,5 @@
   margin-right:1rem
   }
 </style>
+
+  </foreignObject>
