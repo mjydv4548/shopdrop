@@ -1,25 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@mjydv4548 
-sindresorhus
-/
-css-in-readme-like-wat
-Public
-Code
-Issues
-1
-Pull requests
-Actions
-Security
-Insights
-css-in-readme-like-wat/header.svg 
-Newer           Older
- 100644  90 lines (85 sloc)  1.85 KB
 <svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
 	<foreignObject width="100%" height="100%">
 		<div xmlns="http://www.w3.org/1999/xhtml">
@@ -105,15 +83,3 @@ Newer           Older
 		</div>
 	</foreignObject>
 </svg>
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
