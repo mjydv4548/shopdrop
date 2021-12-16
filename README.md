@@ -1,31 +1,119 @@
-# shopdrop
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@mjydv4548 
+sindresorhus
+/
+css-in-readme-like-wat
+Public
+Code
+Issues
+1
+Pull requests
+Actions
+Security
+Insights
+css-in-readme-like-wat/header.svg 
+Newer           Older
+ 100644  90 lines (85 sloc)  1.85 KB
 <svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-<foreignObject width="100%" height="100%">
-<div xmlns="http://www.w3.org/1999/xhtml">
-	
-<style>
-  h1{
-  color:red;
-  }
-  #container{
-  display:flex;
-  
-  }
-  #container img{
-  width:40px;
-  margin-right:1rem
-  }
-</style>
-<div>	
-<h1>A shopping application</h1>
-<div id="container">
-<img src ="https://firebasestorage.googleapis.com/v0/b/shopdrop-a8a7c.appspot.com/o/screenshot%2F1.jpg?alt=media&token=192be4f8-1287-4905-939c-fb56f2cf55de">
-<img src ="https://firebasestorage.googleapis.com/v0/b/shopdrop-a8a7c.appspot.com/o/screenshot%2F2.jpg?alt=media&token=c844fedf-5fde-425a-a089-172421d143db">
-<img style:"max-width:10px" src = "https://firebasestorage.googleapis.com/v0/b/shopdrop-a8a7c.appspot.com/o/screenshot%2F3.jpg?alt=media&token=cc335e54-1f6c-4d61-92d4-f8dfbd8d1342">
-<img style:"max-width:10px" src = "https://firebasestorage.googleapis.com/v0/b/shopdrop-a8a7c.appspot.com/o/screenshot%2F4.jpg?alt=media&token=d93d70ae-0426-462c-b65a-4929880bf653">
-<img style:"max-width:10px" src = "https://firebasestorage.googleapis.com/v0/b/shopdrop-a8a7c.appspot.com/o/screenshot%2F5.jpg?alt=media&token=7f97a59f-9ec4-4df8-9559-8a77a82a269e"> 
-</div>
-</div>
-</div>
-</foreignObject>
+	<foreignObject width="100%" height="100%">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<style>
+				@keyframes rotate {
+					0% {
+						transform: rotate(3deg);
+					}
+					100% {
+						transform: rotate(-3deg);
+					}
+				}
+				@keyframes gradientBackground {
+					0% {
+						background-position: 0% 50%;
+					}
+					50% {
+						background-position: 100% 50%;
+					}
+					100% {
+						background-position: 0% 50%;
+					}
+				}
+				@keyframes fadeIn {
+					0% {
+						opacity: 0;
+					}
+					66% {
+						opacity: 0;
+					}
+					100% {
+						opacity: 1;
+					}
+				}
+				.container {
+					font-family:
+						system-ui,
+						-apple-system,
+						'Segoe UI',
+						Roboto,
+						Helvetica,
+						Arial,
+						sans-serif,
+						'Apple Color Emoji',
+						'Segoe UI Emoji';
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					margin: 0;
+					width: 100%;
+					height: 400px;
+					background: linear-gradient(-45deg, #fc5c7d, #6a82fb, #05dfd7);
+					background-size: 600% 400%;
+					animation: gradientBackground 10s ease infinite;
+					border-radius: 10px;
+					color: white;
+					text-align: center;
+				}
+				h1 {
+					font-size: 50px;
+					line-height: 1.3;
+					letter-spacing: 5px;
+					text-transform: uppercase;
+					text-shadow:
+						0 1px 0 #efefef,
+						0 2px 0 #efefef,
+						0 3px 0 #efefef,
+						0 4px 0 #efefef,
+						0 12px 5px rgba(0, 0, 0, 0.1);
+					animation: rotate ease-in-out 1s infinite alternate;
+				}
+				p {
+					font-size: 20px;
+					text-shadow: 0 1px 0 #efefef;
+					animation: 5s ease 0s normal forwards 1 fadeIn;
+				}
+			</style>
+			<div class="container">
+				<h1>Made with HTML &amp; CSS<br/>not an animated GIF</h1>
+				<p>Click to see the source</p>
+			</div>
+		</div>
+	</foreignObject>
 </svg>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
