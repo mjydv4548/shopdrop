@@ -1,14 +1,5 @@
 # shopdrop
-<style>
-  #container{
-  display:flex;
-  
-  }
-  #container img{
-  width:40px;
-  margin-right:1rem
-  }
-</style>
+
 
 
 
@@ -21,3 +12,14 @@
 <img style:"max-width:10px" src = "https://firebasestorage.googleapis.com/v0/b/shopdrop-a8a7c.appspot.com/o/screenshot%2F4.jpg?alt=media&token=d93d70ae-0426-462c-b65a-4929880bf653">
 <img style:"max-width:10px" src = "https://firebasestorage.googleapis.com/v0/b/shopdrop-a8a7c.appspot.com/o/screenshot%2F5.jpg?alt=media&token=7f97a59f-9ec4-4df8-9559-8a77a82a269e"> 
 </div>
+
+<style>
+  #container{
+  display:flex;
+  
+  }
+  #container img{
+  width:40px;
+  margin-right:1rem
+  }
+</style>
