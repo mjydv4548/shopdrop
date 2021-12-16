@@ -6,7 +6,7 @@
   
   }
   #container img{
-  width:40%;
+  width:40px;
   margin-right:1rem
   }
 </style>
