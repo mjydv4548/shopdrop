@@ -1,6 +1,5 @@
 # shopdrop
 <style>
-  
   #container{
   display:flex;
   
